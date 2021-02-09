@@ -161,7 +161,7 @@ func (p *Parser) parseMarkdown() {
 		}
 
 		// Convert Markdown to HTML
-		exts := blackfriday.NoIntraEmphasis | blackfriday.AutoHeadingIDs | blackfriday.HeadingIDs | blackfriday.FencedCode | blackfriday.HardLineBreak
+		exts := blackfriday.AutoHeadingIDs | blackfriday.HardLineBreak | blackfriday.CommonExtensions | blackfriday.CommonHTMLFlags
 		markdown := blackfriday.Run(content, blackfriday.WithExtensions(exts))
 		page.Markdown = string(markdown)
 
